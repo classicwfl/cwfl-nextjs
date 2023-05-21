@@ -9,6 +9,7 @@ import Container from 'components/Container';
 import PostCard from 'components/PostCard';
 import Pagination from 'components/Pagination';
 import HomeHero from 'components/HomeHero';
+import PostList from 'components/PostList/PostList';
 
 import styles from 'styles/pages/Home.module.scss';
 
@@ -22,11 +23,11 @@ export default function Home({ posts, pagination }) {
             <HomeHero />
 
             <div>
-                {posts.map((post) => {
-                    return (
-                        <PostCard post={post} />
-                    );
-                })}
+                <PostList>
+                    {posts.map((post, index) => {
+                        return <PostCard post={post} showImage={index == 0 || index % 5 == 0 ? '1' : ''} />;
+                    })}
+                </PostList>
                 <Container>
                     {pagination && (
                         <Pagination

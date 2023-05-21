@@ -50,6 +50,11 @@ figcaption {
   margin-top: 0.6em;
 }
 
+figure img {
+    padding: 0;
+    border: 0;
+}
+
 .sr-only {
   display: block;
   overflow: hidden;

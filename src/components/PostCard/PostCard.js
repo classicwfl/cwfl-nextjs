@@ -7,7 +7,7 @@ import FeaturedImage from 'components/FeaturedImage/FeaturedImage';
 
 import styles from './PostCard.module.scss';
 
-const PostCard = ({ post, isFirst, options = {} }) => {
+const PostCard = ({ post, showImage, options = {} }) => {
     const { title, slug, date, author, categories, featuredImage } = post;
     const { excludeMetadata = [] } = options;
 
@@ -26,20 +26,26 @@ const PostCard = ({ post, isFirst, options = {} }) => {
     }
 
     let postCardStyle = styles.postCard;
+    if (showImage) {
+        postCardStyle = `${styles.postCard} ${styles.postCard__showImage}`;
+    }
+    
 
     return (
         <div className={postCardStyle}>
             <div className={styles.postCardInner}>
-                <div className={styles.postCardImageWrap}>
-                {featuredImage && (
-                    <FeaturedImage
-                        {...featuredImage}
-                        className={styles.postCardImage}
-                        src={featuredImage.sourceUrl}
-                        dangerouslySetInnerHTML={featuredImage.caption}
-                    />
+                {showImage && (
+                    <div className={styles.postCardImageWrap}>
+                        {featuredImage && (
+                            <FeaturedImage
+                                {...featuredImage}
+                                className={styles.postCardImage}
+                                src={featuredImage.sourceUrl}
+                                dangerouslySetInnerHTML={featuredImage.caption}
+                            />
+                        )}
+                    </div>
                 )}
-                </div>
                 <div className={styles.postCardContentWrap}>
                     <Link href={postPathBySlug(slug)}>
                         <h2

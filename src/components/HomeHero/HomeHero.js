@@ -15,7 +15,7 @@ const HomeHero = () => {
         <header className={styles.heroWrapper}>
             <PhotoFrame />
             <video 
-                autoPlay 
+                //autoPlay 
                 muted 
                 loop
                 poster="/dumpsterfireposter1.jpg"
