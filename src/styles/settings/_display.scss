@@ -1,0 +1,30 @@
+$border-radius-small: 0.2em;
+
+@mixin scanlines {
+    background-image: repeating-linear-gradient(180deg, rgba(0,0,0,1) 0px, rgba(0,0,0,0) 3px, rgba(0,0,0,0) 4px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: .11;
+    // animation-duration: 1s;
+    // animation-name: pulsate;
+    // animation-iteration-count: infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: .06;
+    }
+
+    50% {
+        opacity: .18;
+    }
+
+    0% {
+        opacity: .06;
+    }
+}

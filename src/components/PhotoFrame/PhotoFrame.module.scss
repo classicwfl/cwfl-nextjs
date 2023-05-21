@@ -1,0 +1,103 @@
+@use '../../styles/settings/colors';
+
+.photoFrameTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    z-index: 9998;
+    pointer-events: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 15px;
+        left: 15px;
+        border: 1px solid colors.$wfl-frame;
+        border-bottom: 0;
+        border-right: 0;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 15px;
+        right: 15px;
+        border: 1px solid colors.$wfl-frame;
+        border-bottom: 0;
+        border-left: 0;
+    }
+}
+
+.photoFrameBottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    z-index: 9998;
+    pointer-events: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        height: 20px;
+        width: 20px;
+        bottom: 15px;
+        left: 15px;
+        border: 1px solid colors.$wfl-frame;
+        border-top: 0;
+        border-right: 0;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        bottom: 15px;
+        right: 15px;
+        border: 1px solid colors.$wfl-frame;
+        border-top: 0;
+        border-left: 0;
+    }
+}
+
+.photoFrameText {
+    line-height: 1;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 15px;
+
+    span {
+        pointer-events: all;
+        background-color: colors.$wfl-frame;
+    }
+}
+
+.photoFrameTextSecondary {
+    line-height: 1;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    right: 15px;
+
+    a {
+        pointer-events: all;
+        color: colors.$wfl-light;
+        background-color: colors.$wfl-frame;
+    }
+}

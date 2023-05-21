@@ -1,0 +1,76 @@
+@use '../../styles/settings/typography';
+@use '../../styles/settings/colors';
+@use '../../styles/settings/display';
+@use '../../styles/settings/dimensions';
+
+.heroWrapper {
+    position: relative;
+
+    video {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.heroWrapper__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: dimensions.$spaceLg;
+
+    @media (max-width: dimensions.$breakpointMd) {
+        justify-content: flex-end;
+    }
+
+    // &:after {
+    //     content: '';
+    //     @include display.scanlines;
+    // }
+
+    h1 {
+        font-family: typography.$font-family-cd;
+        font-weight: 700;
+        letter-spacing: -26px;
+        font-size: 240px;
+        @include typography.glitch-lg;
+        color: colors.$wfl-blue;
+        line-height: 1;
+        margin: 0;
+
+        @media (max-width: dimensions.$breakpointMd) {
+            font-size: 120px;
+            letter-spacing: -13px;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 100;
+
+        a {
+            color: colors.$wfl-light;
+            font-family: typography.$font-family-cd;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 32px;
+            letter-spacing: -1px;
+            line-height:.8;
+            @include typography.glitch-sm;
+
+            @media (max-width: dimensions.$breakpointMd) {
+                font-size: 24px;
+                //letter-spacing: -1px;
+            }
+        }
+    }
+}

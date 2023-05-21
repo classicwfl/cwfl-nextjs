@@ -1,0 +1,145 @@
+@use '../../styles/settings/colors';
+
+/* Logo animations */
+@mixin glitch-logo {
+    box-shadow: 0px 0px 1px colors.$wfl-light, 
+        0px 0px 1px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    animation-duration: 5s;
+    animation-name: glitchLogoAnim;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glitchLogoAnim {
+    0% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    8% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    10% {
+        box-shadow: 0px 0px 3px colors.$wfl-light, 
+        0px 0px 3px colors.$wfl-light, 
+        -3px 0px 2px colors.$wfl-greenglitch, 
+        3px 0px 2px colors.$wfl-purpleglitch;
+    }
+    
+    15% {
+        box-shadow: 0px 0px 3px colors.$wfl-light, 
+        0px 0px 3px colors.$wfl-light, 
+        -3px 0px 2px colors.$wfl-greenglitch, 
+        3px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    16% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    28% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    29% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    35% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    36% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    75% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    76% {
+        box-shadow: 0px 0px 4px colors.$wfl-light, 
+        0px 0px 4px colors.$wfl-light, 
+        -5px 0px 2px colors.$wfl-greenglitch, 
+        5px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    80% {
+        box-shadow: 0px 0px 4px colors.$wfl-light, 
+        0px 0px 4px colors.$wfl-light, 
+        -5px 0px 2px colors.$wfl-greenglitch, 
+        5px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    84% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    100% {
+        box-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+}
+
+.logoWrapper {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: row;
+    height: 64px;
+    width: 64px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 6px;
+    z-index: 9999;
+
+    div {
+        width: 26%;
+        height: 75%;
+        border-radius: 8px;
+        transition: all .2s ease-in-out;
+        background-color: colors.$wfl-light;
+        @include glitch-logo;
+
+        &:nth-child(2) {
+            align-self: flex-end;
+        }
+    }
+
+    &:hover div {
+        opacity: .7;
+    }
+}
+

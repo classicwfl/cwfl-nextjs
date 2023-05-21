@@ -1,0 +1,87 @@
+@import "styles/settings/__settings";
+
+.metadata {
+//   display: flex;
+//   align-items: center;
+//   flex-wrap: wrap;
+  //color: $color-gray-600;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: $font-family-cd;
+  font-size: $fontSizeM;
+  //border-top: 6px dashed $wfl-light;
+
+  @media (max-width: $breakpointLg) {
+    font-size: $fontSizeNormal;
+  }
+  
+  @include glow-md;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  & > li {
+    //margin: 0.8em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}
+
+.metadataTitle {
+    font-size: $fontSizeML;
+    font-weight: 700;
+    text-transform: uppercase;
+    @media (max-width: $breakpointLg) {
+        font-size: $fontSizeM;
+    }
+}
+
+.metadataAuthor {
+  a {
+    margin-left: 0.2em;
+  }
+
+  address {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+  }
+
+  img {
+    width: 1.4em;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+}
+
+.metadataCategories {
+    a {
+        display: inline;
+    }
+}
+
+.categoryLink {
+    display: inline;
+}
+
+.metadataSticky {
+  font-size: 1.15em;
+  color: $color-gray-300;
+}

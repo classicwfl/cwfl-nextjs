@@ -1,0 +1,8 @@
+@use '../../styles/settings/display';
+
+.main {
+    &:after {
+        content: '';
+        @include display.scanlines;
+    }
+}

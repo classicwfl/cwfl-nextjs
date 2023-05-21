@@ -1,0 +1,255 @@
+@use "colors";
+
+$font-family-default: "aktiv-grotesk", sans-serif;
+$font-family-cd: "aktiv-grotesk-condensed", sans-serif;
+
+$fontSizeHuge: 240px;
+$fontSizeXXL: 120px;
+$fontSizeXL: 72px;
+$fontSizeL: 48px;
+$fontSizeML: 32px;
+$fontSizeM: 24px;
+$fontSizeNormal: 18px;
+$fontSizeSmall: 14px;
+$fontSizeXS: 12px;
+$fontSizeXXS: 10px;
+
+// base glow text
+@mixin glow-lg {
+    text-shadow: 0px 0px 4px colors.$wfl-light, 
+        0px 0px 4px colors.$wfl-light;
+}
+
+@mixin glow-md {
+    text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light;
+}
+
+@mixin glow-sm {
+    text-shadow: 0px 0px 1px colors.$wfl-light, 
+        0px 0px 1px colors.$wfl-light;
+}
+
+// Glitch anims for text
+
+@mixin glitch-lg {
+    text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    animation-duration: 5s;
+    animation-name: glitchLgAnim;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glitchLgAnim {
+    0% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    8% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    10% {
+        text-shadow: 0px 0px 6px colors.$wfl-blue, 
+        0px 0px 6px colors.$wfl-blue, 
+        -6px 0px 2px colors.$wfl-greenglitch, 
+        6px 0px 2px colors.$wfl-purpleglitch;
+    }
+    
+    15% {
+        text-shadow: 0px 0px 6px colors.$wfl-blue, 
+        0px 0px 6px colors.$wfl-blue, 
+        -6px 0px 2px colors.$wfl-greenglitch, 
+        6px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    16% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    28% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    29% {
+        text-shadow: 0px 0px 5px colors.$wfl-blue, 
+        0px 0px 5px colors.$wfl-blue, 
+        -8px 0px 3px colors.$wfl-greenglitch, 
+        8px 0px 3px colors.$wfl-purpleglitch;
+    }
+
+    35% {
+        text-shadow: 0px 0px 5px colors.$wfl-blue, 
+        0px 0px 5px colors.$wfl-blue, 
+        -8px 0px 3px colors.$wfl-greenglitch, 
+        8px 0px 3px colors.$wfl-purpleglitch;
+    }
+
+    36% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    75% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    76% {
+        text-shadow: 0px 0px 8px colors.$wfl-blue, 
+        0px 0px 8px colors.$wfl-blue, 
+        -10px 0px 4px colors.$wfl-greenglitch, 
+        10px 0px 4px colors.$wfl-purpleglitch;
+    }
+
+    80% {
+        text-shadow: 0px 0px 8px colors.$wfl-blue, 
+        0px 0px 8px colors.$wfl-blue, 
+        -10px 0px 4px colors.$wfl-greenglitch, 
+        10px 0px 4px colors.$wfl-purpleglitch;
+    }
+
+    84% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    100% {
+        text-shadow: 0px 0px 4px colors.$wfl-blue, 
+        0px 0px 4px colors.$wfl-blue, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+}
+
+@mixin glitch-sm {
+    text-shadow: 0px 0px 1px colors.$wfl-light, 
+        0px 0px 1px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    animation-duration: 5s;
+    animation-name: glitchSmAnim;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glitchSmAnim {
+    0% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    8% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    10% {
+        text-shadow: 0px 0px 3px colors.$wfl-light, 
+        0px 0px 3px colors.$wfl-light, 
+        -3px 0px 2px colors.$wfl-greenglitch, 
+        3px 0px 2px colors.$wfl-purpleglitch;
+    }
+    
+    15% {
+        text-shadow: 0px 0px 3px colors.$wfl-light, 
+        0px 0px 3px colors.$wfl-light, 
+        -3px 0px 2px colors.$wfl-greenglitch, 
+        3px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    16% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    28% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    29% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    35% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -4px 0px 2px colors.$wfl-greenglitch, 
+        4px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    36% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    75% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    76% {
+        text-shadow: 0px 0px 4px colors.$wfl-light, 
+        0px 0px 4px colors.$wfl-light, 
+        -5px 0px 2px colors.$wfl-greenglitch, 
+        5px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    80% {
+        text-shadow: 0px 0px 4px colors.$wfl-light, 
+        0px 0px 4px colors.$wfl-light, 
+        -5px 0px 2px colors.$wfl-greenglitch, 
+        5px 0px 2px colors.$wfl-purpleglitch;
+    }
+
+    84% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+    100% {
+        text-shadow: 0px 0px 2px colors.$wfl-light, 
+        0px 0px 2px colors.$wfl-light, 
+        -2px 0px 1px colors.$wfl-greenglitch, 
+        2px 0px 1px colors.$wfl-purpleglitch;
+    }
+
+}
