@@ -1,4 +1,5 @@
 @use '../../styles/settings/colors';
+@use '../../styles/settings/dimensions';
 
 /* Logo animations */
 @mixin glitch-logo {
@@ -140,6 +141,13 @@
 
     &:hover div {
         opacity: .7;
+    }
+
+    @media (max-width: dimensions.$breakpointMd) {
+        height: 42px;
+        width: 42px;
+        top: 5px;
+        right: 5px;
     }
 }
 

@@ -1,5 +1,12 @@
+@use '../../styles/settings/dimensions';
+
 .postListWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
+    padding-right: 90px;
+
+    @media (max-width: dimensions.$breakpointMd){
+        padding-right: 42px;
+    }
 }

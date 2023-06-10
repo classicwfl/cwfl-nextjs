@@ -12,7 +12,7 @@ const DEFAULT_METADATA_OPTIONS = {
     compactCategories: true,
 };
 
-const Metadata = ({ className, author, date, categories, options = DEFAULT_METADATA_OPTIONS, isSticky = false }) => {
+const Metadata = ({ className, author, date, categories, isFull = false, options = DEFAULT_METADATA_OPTIONS, isSticky = false }) => {
     const metadataClassName = new ClassName(styles.metadata);
 
     metadataClassName.addIf(className, className);
@@ -21,12 +21,13 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
 
     return (
         <ul className={metadataClassName.toString()}>
-            {author && (
+            
+            {author && isFull && (
                 <li className={styles.metadataAuthor}>
                     <span className={styles.metadataTitle}>Author: </span><span>{author.name}</span>
                 </li>
             )}
-            {date && (
+            {date && isFull && (
                 <li>
                     <span className={styles.metadataTitle}>Published: </span>
                     <time pubdate="pubdate" dateTime={date}>

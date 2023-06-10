@@ -4,11 +4,12 @@ import { postPathBySlug } from 'lib/posts';
 
 import Metadata from 'components/Metadata';
 import FeaturedImage from 'components/FeaturedImage/FeaturedImage';
+import HalfFrame from 'components/HalfFrame/HalfFrame';
 
 import styles from './PostCard.module.scss';
 
 const PostCard = ({ post, showImage, options = {} }) => {
-    const { title, slug, date, author, categories, featuredImage } = post;
+    const { title, slug, date, author, categories, featuredImage, postId } = post;
     const { excludeMetadata = [] } = options;
 
     const metadata = {};
@@ -29,36 +30,41 @@ const PostCard = ({ post, showImage, options = {} }) => {
     if (showImage) {
         postCardStyle = `${styles.postCard} ${styles.postCard__showImage}`;
     }
-    
+
 
     return (
+
         <div className={postCardStyle}>
-            <div className={styles.postCardInner}>
-                {showImage && (
-                    <div className={styles.postCardImageWrap}>
-                        {featuredImage && (
-                            <FeaturedImage
-                                {...featuredImage}
-                                className={styles.postCardImage}
-                                src={featuredImage.sourceUrl}
-                                dangerouslySetInnerHTML={featuredImage.caption}
+            <HalfFrame>
+                <div className={styles.postCardInner}>
+                    {showImage && (
+                        <div className={styles.postCardImageWrap}>
+                            {featuredImage && (
+                                <FeaturedImage
+                                    {...featuredImage}
+                                    className={styles.postCardImage}
+                                    src={featuredImage.sourceUrl}
+                                    dangerouslySetInnerHTML={featuredImage.caption}
+                                />
+                            )}
+                        </div>
+                    )}
+                    <div className={styles.postCardContentWrap}>
+                        <Link href={postPathBySlug(slug)}>
+                            <h2
+                                className={styles.postCardTitle}
+                                dangerouslySetInnerHTML={{
+                                    __html: title,
+                                }}
                             />
-                        )}
+                        </Link>
+                        <Metadata className={styles.postCardMetadata} {...metadata} />
+                        <div className={styles.postCardId}>{postId}</div>
                     </div>
-                )}
-                <div className={styles.postCardContentWrap}>
-                    <Link href={postPathBySlug(slug)}>
-                        <h2
-                            className={styles.postCardTitle}
-                            dangerouslySetInnerHTML={{
-                                __html: title,
-                            }}
-                        />
-                    </Link>
-                    <Metadata className={styles.postCardMetadata} {...metadata} />
                 </div>
-            </div>
+            </HalfFrame>
         </div>
+
     );
 };
 

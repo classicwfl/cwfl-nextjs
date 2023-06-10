@@ -1,0 +1,49 @@
+@use '../../styles/settings/colors';
+
+.halfFrameWrapper {
+    position: relative;
+    height: 100%;
+}
+
+.halfFrameTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    pointer-events: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        top: 0;
+        left: 0;
+        border: 1px solid colors.$wfl-light;
+        border-bottom: 0;
+        border-right: 0;
+    }
+}
+
+.halfFrameBottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    z-index: 9998;
+    pointer-events: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        bottom: 0;
+        right: 0;
+        border: 1px solid colors.$wfl-light;
+        border-top: 0;
+        border-left: 0;
+    }
+}

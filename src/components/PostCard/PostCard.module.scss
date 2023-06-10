@@ -2,10 +2,11 @@
 
 .postCard {
     position: relative;
-    padding: $spaceLg 90px $spaceLg $spaceLg;
+    padding: $spaceLg;
     color: inherit;
     text-align: left;
     text-decoration: none;
+    min-height: 300px;
     //height: 100vh;
 
     //   &:nth-of-type(even) {
@@ -24,26 +25,55 @@
             opacity: 0.6;
         }
     }
+
+    @media (max-width: $breakpointMd) {
+        grid-column: 1 / span 2;
+    }
+
+    .postCardTitle {
+        font-size: $fontSizeML;
+        font-family: $font-family-cd;
+        font-style: italic;
+        font-weight: 600;
+        text-decoration: underline;
+        line-height: 1;
+        @include glitch-sm;
+        //max-width: 600px;
+        margin-top: 0;
+    }
+
+    &__showImage {
+        .postCardTitle {
+            font-size: $fontSizeXL;
+            font-family: $font-family-cd;
+            font-style: italic;
+            font-weight: 600;
+            text-decoration: underline;
+            line-height: 1;
+            @include glitch-sm;
+            //max-width: 600px;
+        
+            @media (max-width: $breakpointLg) {
+                font-size: $fontSizeL;
+            }
+        
+            @media (max-width: $breakpointMd) {
+                font-size: $fontSizeML;
+            }
+        }
+    }
 }
 
 .postCardInner {
     display: flex;
     gap: $spaceLg * 2;
     align-items: stretch;
-}
+    height: 100%;
+    padding: $spaceLg;
 
-.postCardTitle {
-    font-size: $fontSizeXL;
-    font-family: $font-family-cd;
-    font-style: italic;
-    font-weight: 600;
-    text-decoration: underline;
-    line-height: 1;
-    @include glitch-sm;
-    //max-width: 600px;
-
-    @media (max-width: $breakpointLg) {
-        font-size: $fontSizeL;
+    @media (max-width: $breakpointMd) {
+        flex-direction: column;
+        gap: $spaceLg;
     }
 }
 
@@ -79,8 +109,46 @@
     width: 50%;
     overflow: hidden;
     position: relative;
+
+    @media (max-width: $breakpointMd) {
+        width: 100%;
+    }
 }
 
 .postCardContentWrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.postCardId {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: right;
+    //padding: $spaceLg;
+    font-size: $fontSizeML;
+    font-family: $font-family-cd;
+    font-weight: 600;
+    line-height: 1;
+    @include glitch-sm;
+
+    .postCard__showImage & {
+        font-size: $fontSizeL;
+
+        @media (max-width: $breakpointMd) {
+            font-size: $fontSizeML;
+        }
+    }
+}
+
+.postCard__showImage .postCardContentWrap {
     width: 50%;
+
+    @media (max-width: $breakpointMd) {
+        width: 100%;
+    }
 }

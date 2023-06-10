@@ -11,10 +11,6 @@
   font-family: $font-family-cd;
   font-size: $fontSizeM;
   //border-top: 6px dashed $wfl-light;
-
-  @media (max-width: $breakpointLg) {
-    font-size: $fontSizeNormal;
-  }
   
   @include glow-md;
 
@@ -44,12 +40,9 @@
 }
 
 .metadataTitle {
-    font-size: $fontSizeML;
+    font-size: $fontSizeM;
     font-weight: 700;
     text-transform: uppercase;
-    @media (max-width: $breakpointLg) {
-        font-size: $fontSizeM;
-    }
 }
 
 .metadataAuthor {
